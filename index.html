@@ -1,12 +1,19 @@
 <script src="https://unpkg.com/vue@3"></script>
 
-<div id="app">{{ message }}</div>
+<div id="app">
+
+    <a>{{message}}</a><br>
+    <button @click="count++">{{ count }}</button>
+
+
+</div>
 
 <script>
     Vue.createApp({
         data() {
             return {
-                message: 'Hello Vue!'
+                count: 0,
+                message: 'Hello Guys! You can click this button while we create this website!'
             }
         }
     }).mount('#app')
