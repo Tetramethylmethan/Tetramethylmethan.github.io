@@ -4,7 +4,8 @@
 
     <a>{{message}}</a><br>
     <button @click="count++">{{ count }}</button>
-
+    <p v-if="count > 5000">You clicked more than 5000 times. </p>
+        
 
 </div>
 
