@@ -4,7 +4,8 @@
 
     <a>{{message}}</a><br>
     <button @click="count++">{{ count }}</button><br>
-    <img v-if="counterReached" src="https://c.tenor.com/7ljQ4p5oUXgAAAAC/cherry-tongue.gif" />
+    <img v-if="counterReached" src="https://c.tenor.com/7ljQ4p5oUXgAAAAC/cherry-tongue.gif" /><br>
+    <p v-if="count > 500">You clicked more than 500 times. </p>
 
 
 </div>
