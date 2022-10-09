@@ -52,6 +52,21 @@ function setup() {
   //strokeWeight(2);
 }
 
+function setHighscore(s){
+  var offset = 3
+  let cookie = document.cookie;
+  var old = x.charAt(offset);
+  
+  if (s>x){
+    document.cookie = x.slice(offset-1) + String(s) + x.slice(offset+1)
+  }
+}
+function getHighscore(){
+  var offset = 3
+  let cookie = document.cookie;
+  return x.charAt(offset);
+}
+
 function draw() {
   clear()
   background(0, 0, 0,0);
@@ -81,8 +96,10 @@ function draw() {
     text("Start", 140, 275);
     textSize(30);
     text("Score: " + score, 150, 325);
+    setHighscore(score);
     textSize(20);
-    text("High Score: " + highScore, 150, 360);
+    text("High Score: " + getHighscore(), 150, 360);
+    
   }
 }
 
