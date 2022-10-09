@@ -53,17 +53,19 @@ function setup() {
 }
 
 function setHighscore(s){
-  var offset = 3
+  var offset = 0
   let cookie = document.cookie;
   var old = cookie.charAt(offset);
   
   if (s>old){
     document.cookie = cookie.slice(offset-1) + String(s) + cookie.slice(offset+1)
   }
+  console.log(document.cookie);
 }
 function getHighscore(){
-  var offset = 3
+  var offset = 0
   let cookie = document.cookie;
+  console.log(document.cookie);
   return cookie.charAt(offset);
 }
 
