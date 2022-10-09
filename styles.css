@@ -1,0 +1,84 @@
+* {
+    font-family: Comic Sans MS;
+}
+
+body {
+    background-image: url("jungle.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+h1 {
+    padding: 20px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.contentbox {
+    margin-top: 7em;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30em;
+    width: 40em;
+    background-color: rgb(186, 174, 174);
+    box-shadow: 0px 5px 10px rgb(0, 0, 0);
+    border: 2px solid;
+    border-radius: 15px;
+}
+
+.row1 {
+    display: flex;
+}
+
+.row2 {
+    display: flex;
+}
+
+.row3 {
+    display: flex;
+}
+
+.game {
+    box-sizing: border-box;
+    width: 20rem;
+    border: 2px solid;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    text-decoration: bold;
+    color: rgb(255, 255, 255);
+    background: rgb(57, 57, 57);
+    box-shadow: 0px 5px 10px rgb(0, 0, 0);
+    margin: 10px 10px 10px 50px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.game:hover {
+    border: 2px solid;
+    border-color: rgb(98, 255, 0);
+    color: white;
+    background-color: #47520b;
+}
+
+.highscore {
+    box-sizing: border-box;
+    width: 7rem;
+    font-size: 1.5rem;
+    text-decoration: bold;
+    border: 2px solid;
+    border-radius: 1.125rem;
+    background: rgb(60, 140, 44);
+    box-shadow: 0px 5px 10px rgb(0, 0, 0);
+    margin: 10px 10px 10px 50px;
+    padding: 1.5rem;
+    text-align: center;
+}

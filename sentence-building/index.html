@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vokabeltrainer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="database.js"></script>
+
+</head>
+
+<body>
+    <button onclick='start()' id="start">START</button>
+    <button onclick='writeWords(document.getElementById("1").innerText)' class="button" id="1"></button>
+    <button onclick='writeWords(document.getElementById("2").innerText)' class="button" id="2"></button>
+    <button onclick='writeWords(document.getElementById("3").innerText)' class="button" id="3"></button>
+    <button onclick='writeWords(document.getElementById("4").innerText)' class="button" id="4"></button>
+    <button onclick='writeWords(document.getElementById("5").innerText)' class="button" id="5"></button>
+    <button onclick='writeWords(document.getElementById("6").innerText)' class="button" id="6"></button>
+    <button onclick='writeWords(document.getElementById("7").innerText)' class="button" id="7"></button>
+    <button onclick='writeWords(document.getElementById("8").innerText)' class="button" id="8"></button>
+    <button onclick='writeWords(document.getElementById("9").innerText)' class="button" id="9"></button>
+    <button onclick='checkSentence()' id="check">CHECK</button>
+    <button onclick='start()' id="next">NEXT</button>
+    <button onclick='history.back()' id="exit">EXIT</button>
+    <input type="text" name="result" id="result">
+
+    <div>
+        <p id="right"></p>
+    </div>
+
+    <div>
+        <p id="false"></p>
+    </div>
+
+    <div class="bubble">
+        <p id="sentence"></p>
+    </div>
+
+    <div id="ape">
+        <img src="img/ape.png" height="200px">
+    </div>
+
+    <div id="scoreDiv">
+        <p id="score">Score : </p>
+        <label id="count">0</label>
+    </div>
+
+    <div id="healthDiv">
+        <img src="https://i.imgur.com/wwqxYjB.png" height="50px" id="b1">
+        <img src="https://i.imgur.com/wwqxYjB.png" height="50px" id="b2">
+        <img src="https://i.imgur.com/wwqxYjB.png" height="50px" id="b3">
+        <img src="https://i.imgur.com/wwqxYjB.png" height="50px" id="b4">
+        <img src="https://i.imgur.com/wwqxYjB.png" height="50px" id="b5">
+    </div>
+
+
+</body>
+
+</html>

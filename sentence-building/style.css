@@ -1,0 +1,196 @@
+body {
+    background-image: url("img/jungle.jpg");
+    background-size: 1920px 940px;
+    background-repeat: no-repeat;
+}
+
+.button {
+    position: relative;
+    width: 150px;
+    height: 50px;
+    top: 200px;
+    left: 250px;
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+    background: rgb(57, 57, 57);
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0px 17px 10px -7px rgba(0, 0, 0, 4);
+}
+
+.button:hover {
+    background: rgb(75, 75, 75);
+}
+
+#start {
+    width: 150px;
+    height: 50px;
+    margin-top: 700px;
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+    background: rgb(57, 57, 57);
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 100px;
+    left: 300px;
+    box-shadow: 0px 17px 10px -7px rgba(0, 0, 0, 4);
+}
+
+#start:hover {
+    background: rgb(75, 75, 75);
+}
+
+#exit {
+    width: 150px;
+    height: 50px;
+    margin-top: 700px;
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+    background: rgb(57, 57, 57);
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    box-shadow: 0px 17px 10px -7px rgba(0, 0, 0, 4);
+}
+
+#exit:hover {
+    background: rgb(75, 75, 75);
+}
+
+#check {
+    width: 150px;
+    height: 50px;
+    margin-top: 700px;
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+    background: rgb(57, 57, 57);
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 100px;
+    left: 1450px;
+    box-shadow: 0px 17px 10px -7px rgba(0, 0, 0, 4);
+}
+
+#check:hover {
+    background: rgb(75, 75, 75);
+}
+
+#next {
+    width: 150px;
+    height: 50px;
+    margin-top: 700px;
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+    background: rgb(57, 57, 57);
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 100px;
+    left: 1650px;
+    box-shadow: 0px 17px 10px -7px rgba(0, 0, 0, 4);
+}
+
+#next:hover {
+    background: rgb(75, 75, 75);
+}
+
+#ape {
+    position: absolute;
+    top: 550px;
+    left: 650px;
+}
+
+.bubble {
+    width: 400px;
+    height: 80px;
+    position: absolute;
+    color: rgb(255, 255, 255);
+    background: rgb(57, 57, 57);
+    border-radius: 50px;
+    top: 550px;
+    left: 850px;
+    box-shadow: 0px 17px 10px -7px rgba(0, 0, 0, 4);
+    font-size: 20px;
+}
+
+.bubble:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-right-color: rgb(57, 57, 57);
+    border-bottom: 0;
+    border-left: 0;
+    margin-left: -10px;
+    margin-bottom: -20px;
+    box-shadow: 0px 17px 10px -7px rgba(0, 0, 0, 4);
+}
+
+#sentence {
+    font-size: 25px;
+    text-align: center;
+}
+
+#result {
+    height: 50px;
+    width: 700px;
+    position: absolute;
+    font-size: 30px;
+    top: 380px;
+    left: 600px;
+    text-align: center;
+    border-radius: 50px;
+    box-shadow: 0px 17px 10px -7px rgba(0, 0, 0, 4);
+    color: rgb(255, 255, 255);
+    background: rgb(57, 57, 57);
+}
+
+#false {
+    position: relative;
+    text-align: center;
+    font-size: 50px;
+    top: 180px;
+    color: rgb(245, 11, 11);
+}
+
+#right {
+    position: relative;
+    text-align: center;
+    font-size: 50px;
+    top: 180px;
+    color: rgb(7, 70, 15);
+}
+
+#score {
+    position: absolute;
+    color: azure;
+    font-size: 25px;
+    top: -10px;
+    left: 20px;
+
+}
+
+#count {
+    position: absolute;
+    color: azure;
+    font-size: 25px;
+    left: 100px;
+    top: 16px;
+}
+
+#healthDiv {
+    position: absolute;
+    margin: 0rem;
+    color: azure;
+    font-size: 25px;
+    top: 1rem;
+    right: 1rem;
+}

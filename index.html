@@ -1,40 +1,42 @@
-<script src="https://unpkg.com/vue@3"></script>
+<!DOCTYPE html>
+<html lang="en">
 
-<div id="app">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vokalbeltrainer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-    <a>{{message}}</a><br>
-    <button @click="count++">{{ count }}</button><br>
-    <img v-if="counterReached" src="https://c.tenor.com/7ljQ4p5oUXgAAAAC/cherry-tongue.gif" /><br>
+<body>
 
-    <li v-for="item in items">
-        {{item}}
-    </li>
+    <div class="contentbox">
 
-</div>
+        <h1>Vokabeltrainer</h1>
 
+
+
+        <div class="row1">
+            <a href="jumping-ape/game1.html" class="game">Jumping Ape</a>
+            <div class="highscore">9999</div>
+        </div>
+
+        <div class="row2">
+            <a href="sentence-building/index.html" class="game">Sentence-Building</a>
+            <div class="highscore">9999</div>
+        </div>
+
+        <div class="row3">
+            <a href="spielmodus-shuffle/index.html" class="game">Shuffle</a>
+            <div class="highscore">9999</div>
+        </div>
+    </div>
+</body>
+
+</html>
 <script>
-
-    Vue.createApp({
-        data() {
-            return {
-                count: 0,
-                message: 'Hello Guys! You can click this button while we create this website!',
-                items: [{"text":"Joker :) Mache nichts"},
-                        {"text":"Dein Gegenüber muss 5 Schlucke trinken"},
-                        {"text":"Trinke 5 Schlucke"},
-                        {"text":"Mach 5 Liegestütze, wenn du es schaffst, verteile 5 Schlucke, ansonsten trinke 3 Schlucke"},
-                        {"text":"Wasserfall"},
-                        {"text":"Ziehe den nächsten Stein mit geschlossenen Augen"},
-                        {"text":"Berühre den nächsten Stein nur mit einem Stift"},
-                        {"text":"Erzähle einen Witz. Fällt dir keiner ein, trinke 3 Schlucke"},
-                        {"text":"Rede ab nun für ein Runde mit sehr tiefer Stimme. Vergisst du es, trinke 5 Schlucke"},
-                        {"text":"Mache mit deinem Gegenüber ein Armdrücken. Der Verlierer trinkt 3 Schlucke"}]
-            }
-        },
-        computed: {
-            counterReached() {
-                return this.count >= 100
-            }
-        }
-    }).mount('#app')
+    document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+    let x = document.cookie;
+    console.log(x)
 </script>

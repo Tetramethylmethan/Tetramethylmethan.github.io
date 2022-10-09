@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shuffle</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="./database.js"></script>
+  <script src="./shuffleJS.js" defer></script>
+  <script src="libraries/p5.min.js"></script>
+  <script src="libraries/p5.sound.min.js"></script>
+</head>
+
+<body id="body">
+  <img src="./img/jungle.jpg" id="backImg">
+
+  <div id="scoreDiv">
+    <p id="score">Score : </p>
+    <label id="count">0</label>
+  </div>
+
+  <div id="wholeDiv">
+    <div id="wordDiv">
+      <p id="word"></p>
+    </div>
+    <div id="ape">
+      <img src="./img/ape.png" height="190px">
+    </div>
+    <div id="errorDiv">
+      <span id="error"></span>
+    </div>
+    <div id="inputDiv">
+      <input type="text" name="inputWord" id="inputWord" onfocus="this.value=''">
+    </div>
+  </div>
+
+  <div>
+    <input type="submit" value="Next" id="next">
+  </div>
+
+  <div>
+    <input type="button" value="Exit" id="exit" onclick="history.back()">
+  </div>
+
+  <div id="healthDiv">
+    <img src="https://i.imgur.com/wwqxYjB.png" height="50px" id="b1">
+    <img src="https://i.imgur.com/wwqxYjB.png" height="50px" id="b2">
+    <img src="https://i.imgur.com/wwqxYjB.png" height="50px" id="b3">
+    <img src="https://i.imgur.com/wwqxYjB.png" height="50px" id="b4">
+    <img src="https://i.imgur.com/wwqxYjB.png" height="50px" id="b5">
+  </div>
+
+  <div id="deadMenu">
+    <p id="lost">You have Lost!</p>
+    <div id="dead">
+      <p id="deadScore">Score</p>
+      <p id="deadScoreN">0</p>
+      <p id="highScore">Highscore</p>
+      <p id="highScoreN">0</p>
+    </div>
+
+    <div>
+      <input type="submit" value="Play again" id="playAgain" onclick="window.location.reload()">
+    </div>
+  
+    <div>
+      <input type="button" value="Exit" id="exitDead" onclick="history.back()">
+    </div>
+
+  </div>
+
+</body>
+</html>
