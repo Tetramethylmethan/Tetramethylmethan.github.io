@@ -58,7 +58,7 @@ function setHighscore(s){
   var old = cookie.charAt(offset);
   
   if (s>old){
-    document.cookie = cookie.slice(offset-1) + String(s) + cookie.slice(offset+1)
+    document.cookie = cookie.slice(offset-1) + String(s) + cookie.slice(offset+1) + "path=/;";
   }
   console.log(document.cookie);
 }
