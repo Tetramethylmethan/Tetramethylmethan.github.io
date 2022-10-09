@@ -22,6 +22,25 @@ var score = 0;
 const next = document.getElementById('next');
 const exit = document.getElementById('exit');
 
+
+function setHighscore(s){
+    var offset = 4
+    let cookie = document.cookie;
+    var old = cookie.charAt(offset);
+    
+    if (s>old){
+      document.cookie = cookie.slice(offset-1) + String(s) + cookie.slice(offset+1)
+    }
+    console.log(document.cookie);
+}
+function getHighscore(){
+    var offset = 4
+    let cookie = document.cookie;
+    console.log(document.cookie);
+    return cookie.charAt(offset);
+}
+
+
 next.addEventListener("click", ()=>{
     const wordIn = document.getElementById('inputWord').value;
         if(!(word == wordIn)){
@@ -55,6 +74,8 @@ function start(){
 
         document.getElementById('deadScoreN').innerHTML = score;
         deadMenu.style.display = 'block';
+        setHighscore(score)
+        
         
     }
     word = data[i];
