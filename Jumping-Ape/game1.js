@@ -55,16 +55,16 @@ function setup() {
 function setHighscore(s){
   var offset = 3
   let cookie = document.cookie;
-  var old = x.charAt(offset);
+  var old = cookie.charAt(offset);
   
-  if (s>x){
-    document.cookie = x.slice(offset-1) + String(s) + x.slice(offset+1)
+  if (s>old){
+    document.cookie = cookie.slice(offset-1) + String(s) + cookie.slice(offset+1)
   }
 }
 function getHighscore(){
   var offset = 3
   let cookie = document.cookie;
-  return x.charAt(offset);
+  return cookie.charAt(offset);
 }
 
 function draw() {
