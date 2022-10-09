@@ -18,25 +18,28 @@
 
 
         <div class="row1">
-            <a href="Jumping-ape/game1.html" class="game">Jumping Ape</a>
-            <div class="highscore">9999</div>
+            <a href="Jumping-Ape/game1.html" class="game">Jumping Ape</a>
+            <div id="A" class="highscore">9999</div>
         </div>
 
         <div class="row2">
             <a href="sentence-building/index.html" class="game">Sentence-Building</a>
-            <div class="highscore">9999</div>
+            <div id="B" class="highscore">9999</div>
         </div>
 
         <div class="row3">
-            <a href="Spielmodus-shuffle/index.html" class="game">Shuffle</a>
-            <div class="highscore">9999</div>
+            <a href="Spielmodus-Shuffle/index.html" class="game">Shuffle</a>
+            <div id="C" class="highscore">9999</div>
         </div>
     </div>
 </body>
 
 </html>
 <script>
-    document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+    document.cookie = "0;0;0; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/";
     let x = document.cookie;
+    document.getElementById("A").innerHTML = x.charAt(0);
+    document.getElementById("B").innerHTML = x.charAt(2);
+    document.getElementById("C").innerHTML = x.charAt(4);
     console.log(x)
 </script>
