@@ -50,7 +50,7 @@ function setup() {
 }
 
 function setHighscore(s){
-  var A,B,C = getHighscore();
+  var A = getHighscore();
 
   if (s>A){
     document.cookie = "werte="+ A +","+ B +","+ s + " ;domain=tetramethylmethan.github.io ; path=/";

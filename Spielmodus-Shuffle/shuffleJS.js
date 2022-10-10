@@ -24,7 +24,7 @@ const exit = document.getElementById('exit');
 
 
 function setHighscore(s){
-    var A,B,C = getHighscore();
+    var C = getHighscore();
 
     if (s>C){
       document.cookie = "werte="+ A +","+ B +","+ s + " ;domain=tetramethylmethan.github.io ; path=/";
