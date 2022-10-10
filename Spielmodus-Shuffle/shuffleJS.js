@@ -27,10 +27,14 @@ function setHighscore(s){
     var A = getHighscore()['A'];
     var B = getHighscore()['B'];
     var C = getHighscore()['C'];
-  
-    if (s>int(C)){
-      document.cookie = "werte="+ A +","+ B +","+ s + " ;domain=tetramethylmethan.github.io ; path=/";
+    if(isNaN(int(C))){
+        document.cookie = "werte="+ A +","+ B +","+ s + " ;domain=tetramethylmethan.github.io ; path=/";
+    }else{
+        if (s>int(C)){
+            document.cookie = "werte="+ A +","+ B +","+ s + " ;domain=tetramethylmethan.github.io ; path=/";
+        }
     }
+    
   
     console.log(document.cookie);
   }

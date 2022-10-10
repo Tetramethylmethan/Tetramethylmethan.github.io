@@ -53,13 +53,15 @@ function setHighscore(s){
   var A = getHighscore()['A'];
   var B = getHighscore()['B'];
   var C = getHighscore()['C'];
-
-  if (s>int(A)){
-    document.cookie = "werte="+ s +","+ B +","+ C + " ;domain=tetramethylmethan.github.io ; path=/";
+  if(isNaN(int(A))){
+      document.cookie = "werte="+ s +","+ B +","+ C + " ;domain=tetramethylmethan.github.io ; path=/";
+  }else{
+      if (s>int(A)){
+          document.cookie = "werte="+ s +","+ B +","+ C + " ;domain=tetramethylmethan.github.io ; path=/";
+      }
   }
-
-  console.log(document.cookie);
 }
+
 function getHighscore(){
   let cookie = document.cookie;
   var values = cookie.slice(6);
