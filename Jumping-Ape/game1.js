@@ -53,10 +53,10 @@ function setHighscore(s){
   var A = getHighscore()['A'];
   var B = getHighscore()['B'];
   var C = getHighscore()['C'];
-  if(isNaN(int(A))){
+  if(isNaN(parseInt(A))){
       document.cookie = "werte="+ s +","+ B +","+ C + " ;domain=tetramethylmethan.github.io ; path=/";
   }else{
-      if (s>int(A)){
+      if (s>parseInt(A)){
           document.cookie = "werte="+ s +","+ B +","+ C + " ;domain=tetramethylmethan.github.io ; path=/";
       }
   }
@@ -72,13 +72,13 @@ function getHighscore(){
 
   //"werte=0,0,0 ; domain=tetramethylmethan.github.io ; path=."
 
-  if(typeof int(A) != "number" ){
+  if(typeof parseInt(A) != "number" ){
       A = 0;
   }
-  if(typeof int(B) != "number"){
+  if(typeof parseInt(B) != "number"){
       B  = 0;
   }
-  if(typeof int(C) != "number"){
+  if(typeof parseInt(C) != "number"){
       C  = 0;
   }
   return {A,B,C}

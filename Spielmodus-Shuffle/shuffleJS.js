@@ -27,10 +27,11 @@ function setHighscore(s){
     var A = getHighscore()['A'];
     var B = getHighscore()['B'];
     var C = getHighscore()['C'];
-    if(isNaN(int(C))){
+    
+    if(isNaN(parseInt(C))){
         document.cookie = "werte="+ A +","+ B +","+ s + " ;domain=tetramethylmethan.github.io ; path=/";
     }else{
-        if (s>int(C)){
+        if (s>parseInt(C)){
             document.cookie = "werte="+ A +","+ B +","+ s + " ;domain=tetramethylmethan.github.io ; path=/";
         }
     }
@@ -48,13 +49,13 @@ function setHighscore(s){
   
     //"werte=0,0,0 ; domain=tetramethylmethan.github.io ; path=."
   
-    if(typeof int(A) != "number" ){
+    if(typeof parseInt(A) != "number" ){
         A = 0;
     }
-    if(typeof int(B) != "number"){
+    if(typeof parseInt(B) != "number"){
         B  = 0;
     }
-    if(typeof int(C) != "number"){
+    if(typeof parseInt(C) != "number"){
         C  = 0;
     }
     return {A,B,C}
@@ -62,7 +63,7 @@ function setHighscore(s){
   }
 
 next.addEventListener("click", ()=>{
-    const wordIn = document.getElementById('inputWord').value;
+    var wordIn = document.getElementById('inputWord').value;
     wordIn = wordIn.toLowerCase();
     word = word.toLowerCase();
         if(!(word == wordIn)){
