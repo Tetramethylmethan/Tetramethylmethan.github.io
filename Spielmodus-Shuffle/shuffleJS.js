@@ -24,14 +24,22 @@ const exit = document.getElementById('exit');
 
 
 function setHighscore(s){
-    var offset = 0
+    var A,B,C = getHighscore();
+
+    if (s>C){
+      document.cookie = "werte="+ A +","+ B +","+ s + " ;domain=tetramethylmethan.github.io ; path=/";
+    }
+
+    console.log(document.cookie);
+  }
+function getHighscore(){
     let cookie = document.cookie;
     var values = cookie.slice(6);
-  
-    var A = values.charAt(6+0);
-    var B = values.charAt(6+2);
-    var C = values.charAt(6+4);
-  
+
+    var A = values.charAt(0);
+    var B = values.charAt(2);
+    var C = values.charAt(4);
+
     //"werte=0,0,0 ; domain=tetramethylmethan.github.io ; path=."
 
     if(A == ' ' ||A == ',' ){
@@ -43,18 +51,9 @@ function setHighscore(s){
     if(C == ' ' ||C == ',' ){
         C  = 0;
     }
+    return C
 
-    if (s>C){
-      document.cookie = "werte="+ A +","+ B +","+ s + " ;domain=tetramethylmethan.github.io ; path=/";
-    }
-    console.log(document.cookie);
-  }
-  function getHighscore(){
-    var offset = 6+4
-    let cookie = document.cookie;
-    console.log(document.cookie);
-    return cookie.charAt(offset);
-  }
+}
 
 next.addEventListener("click", ()=>{
     const wordIn = document.getElementById('inputWord').value;

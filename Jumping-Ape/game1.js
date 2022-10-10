@@ -50,26 +50,35 @@ function setup() {
 }
 
 function setHighscore(s){
-  var offset = 0
-  let cookie = document.cookie;
-  var values = cookie.slice(6);
-
-  var A = values.charAt(6+0);
-  var B = values.charAt(6+2);
-  var C = values.charAt(6+4);
-
-  //"werte=0,0,0 ; domain=tetramethylmethan.github.io ; path=."
+  var A,B,C = getHighscore();
 
   if (s>A){
-    document.cookie = "werte="+ s +","+ B +","+ C + " ;domain=tetramethylmethan.github.io ; path=/";
+    document.cookie = "werte="+ A +","+ B +","+ s + " ;domain=tetramethylmethan.github.io ; path=/";
   }
+
   console.log(document.cookie);
 }
 function getHighscore(){
-  var offset = 6+0
   let cookie = document.cookie;
-  console.log(document.cookie);
-  return cookie.charAt(offset);
+  var values = cookie.slice(6);
+
+  var A = values.charAt(0);
+  var B = values.charAt(2);
+  var C = values.charAt(4);
+
+  //"werte=0,0,0 ; domain=tetramethylmethan.github.io ; path=."
+
+  if(A == ' ' ||A == ',' ){
+      A = 0;
+  }
+  if(B == ' ' ||B == ',' ){
+      B  = 0;
+  }
+  if(C == ' ' ||C == ',' ){
+      C  = 0;
+  }
+  return A
+
 }
 
 function draw() {
