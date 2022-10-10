@@ -29,8 +29,8 @@ function preload() {
 
   //backgroundImg = loadImage("https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Graph-paper.svg/1024px-Graph-paper.svg.png");
   //backgroundImg = loadImage("https://i.imgur.com/qDiLiTP.jpg");
-  doodlerLeftImg = loadImage("https://i.imgur.com/9UrDzMT.png");
-  doodlerRightImg = loadImage("https://i.imgur.com/9UrDzMT.png");
+  doodlerLeftImg = loadImage("https://i.imgur.com/ASpQRVj.png");
+  doodlerRightImg = loadImage("https://i.imgur.com/ASpQRVj.png");
   platformImg = loadImage("https://i.imgur.com/B9mJM2m.png");
   bananaImg = loadImage("https://i.imgur.com/wwqxYjB.png");
 }

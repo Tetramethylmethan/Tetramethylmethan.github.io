@@ -9,12 +9,53 @@ deadMenu.style.display = 'none';
 var health = 5;
 var healthArr = [document.getElementById('b5'), document.getElementById('b4'), document.getElementById('b3'), document.getElementById('b2'), document.getElementById('b1'),]
 
+
+function setHighscore(s){
+    var A = getHighscore()['A'];
+    var B = getHighscore()['B'];
+    var C = getHighscore()['C'];
+    if(isNaN(int(B))){
+        document.cookie = "werte="+ A +","+ s +","+ C + " ;domain=tetramethylmethan.github.io ; path=/";
+    }else{
+        if (s>int(B)){
+            document.cookie = "werte="+ A +","+ s +","+ C + " ;domain=tetramethylmethan.github.io ; path=/";
+        }
+    }
+  }
+  
+  function getHighscore(){
+    let cookie = document.cookie;
+    var values = cookie.slice(6);
+  
+    var A = values.charAt(0);
+    var B = values.charAt(2);
+    var C = values.charAt(4);
+  
+    //"werte=0,0,0 ; domain=tetramethylmethan.github.io ; path=."
+  
+    if(typeof int(A) != "number" ){
+        A = 0;
+    }
+    if(typeof int(B) != "number"){
+        B  = 0;
+    }
+    if(typeof int(C) != "number"){
+        C  = 0;
+    }
+    return {A,B,C}
+  
+  }
+
+
+
 start();
 
 function start() {
     if (health == 0) {
         document.getElementById('deadScoreN').innerHTML = score;
         deadMenu.style.display = 'block';
+        setHighscore(score);
+        score = 0;
     }
     if (i <= words.length && j < sentencesDe.length) {
         document.getElementById("result").value = "";
