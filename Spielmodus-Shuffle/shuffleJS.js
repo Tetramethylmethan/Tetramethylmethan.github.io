@@ -63,6 +63,8 @@ function setHighscore(s){
 
 next.addEventListener("click", ()=>{
     const wordIn = document.getElementById('inputWord').value;
+    wordIn = wordIn.toLowerCase();
+    word = word.toLowerCase();
         if(!(word == wordIn)){
             loverHealth();
             errorDiv.style.display = 'block';
@@ -82,6 +84,7 @@ next.addEventListener("click", ()=>{
 document.addEventListener('keydown', (event) => {
     if (event.key === "Enter") {
       next.click()
+      document.getElementById('inputWord').value = "";
     }
 })
 

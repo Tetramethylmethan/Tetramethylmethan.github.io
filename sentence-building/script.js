@@ -1,6 +1,6 @@
 var a;
 var i = 0;
-var j = 0;
+var j = -1;
 var score = 0;
 
 var deadMenu = document.getElementById("deadMenu");
@@ -61,10 +61,11 @@ function start() {
         document.getElementById("result").value = "";
         document.getElementById("false").innerHTML = "";
         document.getElementById("right").innerHTML = "";
+        j = j+1;
         document.getElementById("sentence").innerText = sentencesDe[j];
         k = 1;
         for (i; i <= i + 9; i++) {
-            document.getElementById(k).innerText = words[i];
+            document.getElementById(k).innerText= words[i];
             k++;
         }
     } else {
@@ -87,7 +88,7 @@ function checkSentence() {
             document.getElementById("false").innerHTML = "Falsch! Richtig wäre: " + sentencesEn[j];
             loverHealth();
         }
-        j++;
+        
     }
 }
 

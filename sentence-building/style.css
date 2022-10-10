@@ -1,6 +1,7 @@
 body {
+    margin: 0;height: 100%;overflow: hidden;
     background-image: url("img/jungle.jpg");
-    background-size: 1920px 940px;
+    background-size: 100vw 100vh;
     background-repeat: no-repeat;
 }
 
