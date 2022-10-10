@@ -35,7 +35,7 @@ function setHighscore(s){
     //"werte=0,0,0 ; domain=tetramethylmethan.github.io ; path=."
   
     if (s>C){
-      document.cookie = "werte="+ s +","+ B +","+ C + " ;domain=tetramethylmethan.github.io ; path=/";
+      document.cookie = "werte="+ A +","+ B +","+ s + " ;domain=tetramethylmethan.github.io ; path=/";
     }
     console.log(document.cookie);
   }
