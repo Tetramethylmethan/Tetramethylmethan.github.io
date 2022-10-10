@@ -24,22 +24,27 @@ const exit = document.getElementById('exit');
 
 
 function setHighscore(s){
-    var offset = 4
+    var offset = 0
     let cookie = document.cookie;
-    var old = cookie.charAt(offset);
-    
-    if (s>old){
-      document.cookie = cookie.slice(offset-1) + String(s) + cookie.slice(offset+1) + + " ; tetramethylmethan.github.io";
+    var values = cookie.slice(6);
+  
+    var A = values.charAt(6+0);
+    var B = values.charAt(6+2);
+    var C = values.charAt(6+4);
+  
+    //"werte=0,0,0 ; domain=tetramethylmethan.github.io ; path=."
+  
+    if (s>C){
+      document.cookie = "werte="+ s +","+ B +","+ C + " ;domain=tetramethylmethan.github.io ; path=/";
     }
     console.log(document.cookie);
-}
-function getHighscore(){
-    var offset = 4
+  }
+  function getHighscore(){
+    var offset = 6+4
     let cookie = document.cookie;
     console.log(document.cookie);
     return cookie.charAt(offset);
-}
-
+  }
 
 next.addEventListener("click", ()=>{
     const wordIn = document.getElementById('inputWord').value;

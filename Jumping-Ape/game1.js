@@ -21,9 +21,6 @@ var guess = "";
 var wantedWord = "ree";
 var health = 3;
 
-var vocabulary = {"auto":"car","baum":"tree","raum":"room"}
-
-
 
 // ===========================
 //  Preload the Image Sprites
@@ -56,20 +53,23 @@ function setHighscore(s){
   var offset = 0
   let cookie = document.cookie;
   var values = cookie.slice(6);
-  var old = values.charAt(offset);
+
+  var A = values.charAt(6+0);
+  var B = values.charAt(6+2);
+  var C = values.charAt(6+4);
 
   //"werte=0,0,0 ; domain=tetramethylmethan.github.io ; path=."
 
-  if (s>old){
-    document.cookie = cookie.slice(offset-1) + String(s) + cookie.slice(offset+1)+ " ;domain=tetramethylmethan.github.io ; path=.";
+  if (s>A){
+    document.cookie = "werte="+ s +","+ B +","+ C + " ;domain=tetramethylmethan.github.io ; path=/";
   }
   console.log(document.cookie);
 }
 function getHighscore(){
-  var offset = 0
+  var offset = 6+0
   let cookie = document.cookie;
   console.log(document.cookie);
-  return cookie.charAt(offset+6);
+  return cookie.charAt(offset);
 }
 
 function draw() {
@@ -245,7 +245,7 @@ function keyTyped(){
     console.log(vocabulary[nextPlatform.word])
     guess = guess.replace(' ','')
     if(guess != ""){
-      if (guess == vocabulary[nextPlatform.word]){
+      if (guess == vocabulary[nextPlatform.word].replace(' ','')){
         //richtige eingabe
         score++;
         nextPlatform.jumpable = true;
