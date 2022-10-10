@@ -114,7 +114,7 @@ function draw() {
     text("Score: " + score, 150, 325);
     setHighscore(score);
     textSize(20);
-    text("High Score: " + getHighscore()[A], 150, 360);
+    text("High Score: " + getHighscore()['A'], 150, 360);
     
   }
 }
