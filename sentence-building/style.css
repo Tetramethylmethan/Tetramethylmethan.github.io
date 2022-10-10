@@ -19,83 +19,94 @@ body {
 }
 
 .button:hover {
-    background: rgb(75, 75, 75);
+    border: 2px solid;
+    border-color: rgb(98, 255, 0);
+    color: white;
+    background-color: #47520b;
 }
 
-#start {
-    width: 150px;
-    height: 50px;
-    margin-top: 700px;
-    border-radius: 15px;
-    color: rgb(255, 255, 255);
-    background: rgb(57, 57, 57);
-    font-size: 20px;
-    cursor: pointer;
-    position: absolute;
-    top: 100px;
-    left: 300px;
-    box-shadow: 0px 17px 10px -7px rgba(0, 0, 0, 4);
-}
+/* 
 
-#start:hover {
-    background: rgb(75, 75, 75);
-}
+    NEXT AND EXIT BUTTONS
 
-#exit {
-    width: 150px;
-    height: 50px;
-    margin-top: 700px;
-    border-radius: 15px;
-    color: rgb(255, 255, 255);
-    background: rgb(57, 57, 57);
-    font-size: 20px;
-    cursor: pointer;
-    position: absolute;
-    top: 100px;
-    left: 100px;
-    box-shadow: 0px 17px 10px -7px rgba(0, 0, 0, 4);
-}
-
-#exit:hover {
-    background: rgb(75, 75, 75);
-}
-
-#check {
-    width: 150px;
-    height: 50px;
-    margin-top: 700px;
-    border-radius: 15px;
-    color: rgb(255, 255, 255);
-    background: rgb(57, 57, 57);
-    font-size: 20px;
-    cursor: pointer;
-    position: absolute;
-    top: 100px;
-    left: 1450px;
-    box-shadow: 0px 17px 10px -7px rgba(0, 0, 0, 4);
-}
-
-#check:hover {
-    background: rgb(75, 75, 75);
-}
+*/
 
 #next {
-    width: 150px;
-    height: 50px;
-    margin-top: 700px;
-    border-radius: 15px;
+    margin: 0;
+    position: absolute;
+    top: 90%;
+    left: 90%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 70px;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 25px;
     color: rgb(255, 255, 255);
     background: rgb(57, 57, 57);
-    font-size: 20px;
+    box-shadow: 0px 5px 10px rgb(0, 0, 0);
+    border: 2px solid;
     cursor: pointer;
-    position: absolute;
-    top: 100px;
-    left: 1650px;
-    box-shadow: 0px 17px 10px -7px rgba(0, 0, 0, 4);
 }
 
 #next:hover {
-    background: rgb(75, 75, 75);
+    border: 2px solid;
+    border-color: rgb(98, 255, 0);
+    color: white;
+    background-color: #47520b;
+}
+
+#exit {
+    margin: 0;
+    position: absolute;
+    top: 90%;
+    left: 10%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 70px;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    background: rgb(57, 57, 57);
+    box-shadow: 0px 5px 10px rgb(0, 0, 0);
+    border: 2px solid;
+    cursor: pointer;
+}
+
+#exit:hover {
+    border: 2px solid;
+    border-color: rgb(98, 255, 0);
+    color: white;
+    background-color: #47520b;
+}
+
+#check {
+    margin: 0;
+    position: absolute;
+    top: 90%;
+    left: 80%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 70px;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    background: rgb(57, 57, 57);
+    box-shadow: 0px 5px 10px rgb(0, 0, 0);
+    border: 2px solid;
+    cursor: pointer;
+}
+
+#check:hover {
+    border: 2px solid;
+    border-color: rgb(98, 255, 0);
+    color: white;
+    background-color: #47520b;
 }
 
 #ape {
@@ -193,4 +204,124 @@ body {
     font-size: 25px;
     top: 1rem;
     right: 1rem;
+}
+
+/* 
+
+    DEAD MENU
+
+*/
+
+#deadMenu {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    width: 50rem;
+    height: 40rem;
+    background-color: rgb(186, 174, 174);
+    box-shadow: 0px 5px 10px rgb(0, 0, 0);
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+#lost {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+#dead {
+    position: absolute;
+    margin-left: 5rem;
+    margin-top: 2rem;
+    width: 40rem;
+    height: 12rem;
+    color: rgb(255, 255, 255);
+    background: rgb(57, 57, 57);
+    box-shadow: 0px 5px 10px rgb(0, 0, 0);
+    border: 2px solid;
+    border-radius: 50px;
+    box-shadow: 0px 17px 10px -7px rgba(0, 0, 0, 4);
+}
+
+#deadScore {
+    color: azure;
+    margin-top: 1rem;
+    margin-left: 4rem;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#highScore {
+    color: azure;
+    margin-top: -1rem;
+    margin-left: 4rem;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#deadScoreN {
+    color: azure;
+    position: absolute;
+    margin-top: -6.3rem;
+    margin-left: 30rem;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#highScoreN {
+    color: azure;
+    position: absolute;
+    margin-top: -6.3rem;
+    margin-left: 30rem;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#playAgain {
+    position: absolute;
+    top: 77%;
+    left: 58%;
+    width: 15rem;
+    height: 5rem;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    background: rgb(57, 57, 57);
+    box-shadow: 0px 5px 10px rgb(0, 0, 0);
+    border: 2px solid;
+    cursor: pointer;
+}
+
+#exitDead {
+    margin: 0;
+    position: absolute;
+    top: 77%;
+    left: 10%;
+    width: 15rem;
+    height: 5rem;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    background: rgb(57, 57, 57);
+    box-shadow: 0px 5px 10px rgb(0, 0, 0);
+    border: 2px solid;
+    cursor: pointer;
+}
+
+#playAgain:hover {
+    border: 2px solid;
+    border-color: rgb(98, 255, 0);
+    color: white;
+    background-color: #47520b;
+}
+
+#exitDead:hover {
+    border: 2px solid;
+    border-color: rgb(98, 255, 0);
+    color: white;
+    background-color: #47520b;
 }

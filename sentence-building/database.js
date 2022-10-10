@@ -43,7 +43,7 @@ var words = [
     "i", "apple", "am", "today", "fine", "you", "buy", "bus", "talk",
     "i", "don’t", "today", "understand", "am", "car", "go", "tomorrow", "nose",
     "see", "from", "name", "fine", "is", "today", "you", "are", "understand",
-    "i", "eat", "understand", "an", "you", "apple", "are", "school",
+    "i", "eat", "understand", "an", "you", "apple", "are", "school", "on",
     "i", "go", "are", "from", "today", "to", "apple", "school", "you",
     "do", "today", "you", "from", "want", "to", "play", "with", "me",
     "what", "are", "is", "fine", "there", "to", "eat", "today", "from",

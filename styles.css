@@ -8,7 +8,8 @@ body {
     background-repeat: no-repeat;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     height: 100%;
     overflow: hidden;
@@ -60,6 +61,7 @@ a {
     margin: 10px 10px 10px 50px;
     padding: 1.5rem;
     text-align: center;
+    cursor: pointer;
 }
 
 .game:hover {

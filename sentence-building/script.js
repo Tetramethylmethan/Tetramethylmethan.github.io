@@ -3,8 +3,20 @@ var i = 0;
 var j = 0;
 var score = 0;
 
+var deadMenu = document.getElementById("deadMenu");
+deadMenu.style.display = 'none';
+
+var health = 5;
+var healthArr = [document.getElementById('b5'), document.getElementById('b4'), document.getElementById('b3'), document.getElementById('b2'), document.getElementById('b1'),]
+
+start();
+
 function start() {
-    if (i <= words.length) {
+    if (health == 0) {
+        document.getElementById('deadScoreN').innerHTML = score;
+        deadMenu.style.display = 'block';
+    }
+    if (i <= words.length && j < sentencesDe.length) {
         document.getElementById("result").value = "";
         document.getElementById("false").innerHTML = "";
         document.getElementById("right").innerHTML = "";
@@ -32,7 +44,13 @@ function checkSentence() {
             document.getElementById('count').innerHTML = score;
         } else {
             document.getElementById("false").innerHTML = "Falsch! Richtig wäre: " + sentencesEn[j];
+            loverHealth();
         }
         j++;
     }
+}
+
+function loverHealth() {
+    healthArr[health - 1].style.display = 'none';
+    health--;
 }
