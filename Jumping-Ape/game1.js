@@ -55,10 +55,13 @@ function setup() {
 function setHighscore(s){
   var offset = 0
   let cookie = document.cookie;
-  var old = cookie.charAt(offset);
-  
+  var values = cookie.slice(6);
+  var old = values.charAt(offset);
+
+  //"werte=0,0,0 ; domain=tetramethylmethan.github.io ; path=."
+
   if (s>old){
-    document.cookie = cookie.slice(offset-1) + String(s) + cookie.slice(offset+1)+ " ;domain=tetramethylmethan.github.io";
+    document.cookie = cookie.slice(offset-1) + String(s) + cookie.slice(offset+1)+ " ;domain=tetramethylmethan.github.io ; path=.";
   }
   console.log(document.cookie);
 }
@@ -66,7 +69,7 @@ function getHighscore(){
   var offset = 0
   let cookie = document.cookie;
   console.log(document.cookie);
-  return cookie.charAt(offset);
+  return cookie.charAt(offset+6);
 }
 
 function draw() {
