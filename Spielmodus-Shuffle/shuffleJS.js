@@ -33,7 +33,17 @@ function setHighscore(s){
     var C = values.charAt(6+4);
   
     //"werte=0,0,0 ; domain=tetramethylmethan.github.io ; path=."
-  
+
+    if(A == ' ' ||A == ',' ){
+        A = 0;
+    }
+    if(B == ' ' ||B == ',' ){
+        B  = 0;
+    }
+    if(C == ' ' ||C == ',' ){
+        C  = 0;
+    }
+
     if (s>C){
       document.cookie = "werte="+ A +","+ B +","+ s + " ;domain=tetramethylmethan.github.io ; path=/";
     }
