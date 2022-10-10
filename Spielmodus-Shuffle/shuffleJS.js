@@ -24,36 +24,38 @@ const exit = document.getElementById('exit');
 
 
 function setHighscore(s){
-    var A,B,C = getHighscore();
-
-    if (s>C){
+    var A = getHighscore()['A'];
+    var B = getHighscore()['B'];
+    var C = getHighscore()['C'];
+  
+    if (s>int(C)){
       document.cookie = "werte="+ A +","+ B +","+ s + " ;domain=tetramethylmethan.github.io ; path=/";
     }
-
+  
     console.log(document.cookie);
   }
-function getHighscore(){
+  function getHighscore(){
     let cookie = document.cookie;
     var values = cookie.slice(6);
-
+  
     var A = values.charAt(0);
     var B = values.charAt(2);
     var C = values.charAt(4);
-
+  
     //"werte=0,0,0 ; domain=tetramethylmethan.github.io ; path=."
-
-    if(A == ' ' ||A == ',' ){
+  
+    if(typeof int(A) != "number" ){
         A = 0;
     }
-    if(B == ' ' ||B == ',' ){
+    if(typeof int(B) != "number"){
         B  = 0;
     }
-    if(C == ' ' ||C == ',' ){
+    if(typeof int(C) != "number"){
         C  = 0;
     }
-    return A,B,C
-
-}
+    return {A,B,C}
+  
+  }
 
 next.addEventListener("click", ()=>{
     const wordIn = document.getElementById('inputWord').value;

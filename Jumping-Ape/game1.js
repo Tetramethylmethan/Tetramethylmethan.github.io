@@ -50,10 +50,12 @@ function setup() {
 }
 
 function setHighscore(s){
-  var A,B,C = getHighscore();
+  var A = getHighscore()['A'];
+  var B = getHighscore()['B'];
+  var C = getHighscore()['C'];
 
-  if (s>A){
-    document.cookie = "werte="+ A +","+ B +","+ s + " ;domain=tetramethylmethan.github.io ; path=/";
+  if (s>int(A)){
+    document.cookie = "werte="+ s +","+ B +","+ C + " ;domain=tetramethylmethan.github.io ; path=/";
   }
 
   console.log(document.cookie);
@@ -68,16 +70,16 @@ function getHighscore(){
 
   //"werte=0,0,0 ; domain=tetramethylmethan.github.io ; path=."
 
-  if(A == ' ' ||A == ',' ){
+  if(typeof int(A) != "number" ){
       A = 0;
   }
-  if(B == ' ' ||B == ',' ){
+  if(typeof int(B) != "number"){
       B  = 0;
   }
-  if(C == ' ' ||C == ',' ){
+  if(typeof int(C) != "number"){
       C  = 0;
   }
-  return A,B,C
+  return {A,B,C}
 
 }
 
