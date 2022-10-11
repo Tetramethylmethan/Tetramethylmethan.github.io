@@ -42,10 +42,10 @@ function setHighscore(s){
   function getHighscore(){
     let cookie = document.cookie;
     var values = cookie.slice(6);
-  
-    var A = values.charAt(0);
-    var B = values.charAt(2);
-    var C = values.charAt(4);
+    var cleanValues = values.split(',')
+    var A = cleanValues[0];
+    var B = cleanValues[1];
+    var C = cleanValues[2];
   
     //"werte=0,0,0 ; domain=tetramethylmethan.github.io ; path=."
   

@@ -36,10 +36,31 @@
 
 </html>
 <script>
-    
-    let x = document.cookie;
-    document.getElementById("A").innerHTML = x.charAt(6+0);
-    document.getElementById("B").innerHTML = x.charAt(6+2);
-    document.getElementById("C").innerHTML = x.charAt(6+4);
+    function getHighscore(){
+        let cookie = document.cookie;
+        var values = cookie.slice(6);
+        var cleanValues = values.split(',')
+        var A = cleanValues[0];
+        var B = cleanValues[1];
+        var C = cleanValues[2];
+
+        //"werte=0,0,0 ; domain=tetramethylmethan.github.io ; path=."
+
+        if(typeof parseInt(A) != "number" ){
+            A = 0;
+        }
+        if(typeof parseInt(B) != "number"){
+            B  = 0;
+        }
+        if(typeof parseInt(C) != "number"){
+            C  = 0;
+        }
+        return {A,B,C}
+
+    }
+
+    document.getElementById("A").innerHTML =getHighscore()['A'];
+    document.getElementById("B").innerHTML =getHighscore()['B'];
+    document.getElementById("C").innerHTML =getHighscore()['C'];
     console.log(x)
 </script>

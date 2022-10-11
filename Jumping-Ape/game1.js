@@ -65,10 +65,10 @@ function setHighscore(s){
 function getHighscore(){
   let cookie = document.cookie;
   var values = cookie.slice(6);
-
-  var A = values.charAt(0);
-  var B = values.charAt(2);
-  var C = values.charAt(4);
+  var cleanValues = values.split(',')
+  var A = cleanValues[0];
+  var B = cleanValues[1];
+  var C = cleanValues[2];
 
   //"werte=0,0,0 ; domain=tetramethylmethan.github.io ; path=."
 
@@ -108,7 +108,7 @@ function draw() {
     
   } else {
     // Start menu
-    health = 3;
+    
     fill(0);
     textSize(60);
     text("Start", 140, 275);
@@ -117,7 +117,10 @@ function draw() {
     setHighscore(score);
     textSize(20);
     text("High Score: " + getHighscore()['A'], 150, 360);
-    
+    if(health == 0){
+      text(nextPlatform.word + " ->" + vocabulary[nextPlatform.word]);
+    }
+    health = 3;
   }
 }
 
@@ -282,6 +285,7 @@ function keyTyped(){
   guess = guess+ key;
 }
 function drwaGuess(){
+  fill(255, 255, 255);
   textSize(60);
   text(guess, 150, 325);
 }
