@@ -42,10 +42,10 @@ function setHighscore(s){
   function getHighscore(){
     let cookie = document.cookie;
     var values = cookie.slice(6);
-    var cleanValues = values.split(',')
-    var A = cleanValues[0];
-    var B = cleanValues[1];
-    var C = cleanValues[2];
+  
+    var A = values.charAt(0);
+    var B = values.charAt(2);
+    var C = values.charAt(4);
   
     //"werte=0,0,0 ; domain=tetramethylmethan.github.io ; path=."
   
@@ -99,20 +99,27 @@ function start(){
         document.getElementById('deadScoreN').innerHTML = score;
         deadMenu.style.display = 'block';
         setHighscore(score)
-        
-        
     }
     word = data[i];
-    var shuffled = word.split('').sort(function(){return 0.5-Math.random()}).join('');
+    
+    var anfang = "<a style='color:black;'>" + word[0] + "</a>";
+    var restWort = word.slice(1);
+    var wordUnchanged = anfang + restWort;
+    var restShuffeld = restWort.split('').sort(function(){return 0.5-Math.random()}).join('');
+    var randomPoint = Math.floor(Math.random()*restShuffeld.length);
+    var shuffled = restShuffeld.slice(0,randomPoint) + anfang + restShuffeld.slice(randomPoint,restShuffeld.length);
+    //var shuffled = word.split('').sort(function(){return 0.5-Math.random()}).join('');
     while(1){
-        if(word == shuffled){
-            var shuffled = word.split('').sort(function(){return 0.5-Math.random()}).join('');
+        if(wordUnchanged == shuffled){
+            var restShuffeld = restWort.split('').sort(function(){return 0.5-Math.random()}).join('');
+            var randomPoint = Math.floor(Math.random()*restShuffeld.length);
+            var shuffled = restShuffeld.slice(0,randomPoint) + anfang + restShuffeld.slice(randomPoint,restShuffeld.length);
         }
-        if(word != shuffled){
+        if(wordUnchanged != shuffled){
             break;
         }
     }
-    document.getElementById('word').innerText = shuffled + '';
+    document.getElementById('word').innerHTML = shuffled + '';
 }
 
 function errorMessage() {
@@ -127,7 +134,7 @@ function correctMessage() {
     var error = document.getElementById("error")
        
         error.textContent = "Nice, you go the word right!" ;
-        error.style.color = "green";
+        error.style.color = "rgb(98, 255, 0)";
         error.style.fontSize = "3rem";
         //error.style.fontWeight = "bold";
 }

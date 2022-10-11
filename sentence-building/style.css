@@ -1,5 +1,11 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
-    margin: 0;height: 100%;overflow: hidden;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
     background-image: url("img/jungle.jpg");
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
@@ -117,7 +123,7 @@ body {
 }
 
 .bubble {
-    width: 400px;
+    width: 500px;
     height: 80px;
     position: absolute;
     color: rgb(255, 255, 255);
@@ -151,7 +157,7 @@ body {
     text-align: center;
 }
 
-#result {
+#answer {
     height: 50px;
     width: 700px;
     position: absolute;

@@ -1,3 +1,6 @@
+*{
+  font-family: arial;
+}
 body {
   /* background-image: url("./img/jungle.jpg"); */
   background-color: black;

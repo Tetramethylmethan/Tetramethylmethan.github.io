@@ -102,7 +102,6 @@ function draw() {
     drawLives();
     if(health <=0){
       gameStarted = false;
-      health = 3;
       platformList = []
     }
     
@@ -117,10 +116,14 @@ function draw() {
     setHighscore(score);
     textSize(20);
     text("High Score: " + getHighscore()['A'], 150, 360);
-    if(health == 0){
-      text(nextPlatform.word + " ->" + vocabulary[nextPlatform.word]);
+    console.log(health)
+    if(health <= 0){
+      textSize(25);
+      text(lastWord +" heist auf englisch:",50, 405);
+      textSize(30);
+      text(vocabulary[lastWord],150, 440);
+      
     }
-    health = 3;
   }
 }
 
@@ -136,6 +139,7 @@ function moveScreen() {
 // Start Game
 function mousePressed() {
   if(gameStarted == false) {
+    health = 3;
     score = 0;
     setupPlatforms();
     doodlerY = 350;
@@ -261,6 +265,7 @@ function keyTyped(){
     console.log(vocabulary[nextPlatform.word])
     guess = guess.replace(' ','')
     if(guess != ""){
+      lastWord = nextPlatform.word;
       if (guess == vocabulary[nextPlatform.word].replace(' ','')){
         //richtige eingabe
         score++;
@@ -327,6 +332,7 @@ function checkCollision() {
     if(score > highScore) {
       highScore = score;
     }
+    health = 0;
     gameStarted = false;
     platformList = [];
   }
