@@ -1,0 +1,23 @@
+#exit {
+    position: absolute;
+    top: 90%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 70px;
+    font-size: 35px;
+    font-weight: bold;
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    background: rgb(57, 57, 57);
+    box-shadow: 0px 5px 10px rgb(0, 0, 0);
+    border: 2px solid;
+    cursor: pointer;
+}
+
+#exit:hover {
+    border: 2px solid;
+    border-color: rgb(98, 255, 0);
+    color: white;
+    background-color: #47520b;
+}

@@ -36,7 +36,7 @@
 
 </html>
 <script>
-    function getHighscore(){
+    function getHighscore() {
         let cookie = document.cookie;
         var values = cookie.slice(6);
         var cleanValues = values.split(',')
@@ -46,21 +46,21 @@
 
         //"werte=0,0,0 ; domain=tetramethylmethan.github.io ; path=."
 
-        if(typeof parseInt(A) != "number" ){
+        if (typeof parseInt(A) != "number" || A == undefined || A =='') {
             A = 0;
         }
-        if(typeof parseInt(B) != "number"){
-            B  = 0;
+        if (typeof parseInt(B) != "number" || B == undefined || B =='') {
+            B = 0;
         }
-        if(typeof parseInt(C) != "number"){
-            C  = 0;
+        if (typeof parseInt(C) != "number" || C == undefined || C =='') {
+            C = 0;
         }
-        return {A,B,C}
+        return { A, B, C }
 
     }
 
-    document.getElementById("A").innerHTML =getHighscore()['A'];
-    document.getElementById("B").innerHTML =getHighscore()['B'];
-    document.getElementById("C").innerHTML =getHighscore()['C'];
+    document.getElementById("A").innerHTML = getHighscore()['A'];
+    document.getElementById("B").innerHTML = getHighscore()['B'];
+    document.getElementById("C").innerHTML = getHighscore()['C'];
     console.log(x)
 </script>

@@ -1,4 +1,4 @@
-var yScale =0;
+var yScale = 0;
 
 var doodlerSize = 60;
 var doodlerX;
@@ -39,7 +39,7 @@ function preload() {
 //  Controllers
 // ===========================
 function setup() {
-  var cnv = createCanvas(400 , 600 );
+  var cnv = createCanvas(400, 600);
   var x = (windowWidth - width) / 2;
   var y = (windowHeight - height) / 2;
   cnv.position(x, y);
@@ -49,20 +49,20 @@ function setup() {
   //strokeWeight(2);
 }
 
-function setHighscore(s){
+function setHighscore(s) {
   var A = getHighscore()['A'];
   var B = getHighscore()['B'];
   var C = getHighscore()['C'];
-  if(isNaN(parseInt(A))){
-      document.cookie = "werte="+ s +","+ B +","+ C + " ;domain=tetramethylmethan.github.io ; path=/";
-  }else{
-      if (s>parseInt(A)){
-          document.cookie = "werte="+ s +","+ B +","+ C + " ;domain=tetramethylmethan.github.io ; path=/";
-      }
+  if (isNaN(parseInt(A))) {
+    document.cookie = "werte=" + s + "," + B + "," + C + " ;domain=tetramethylmethan.github.io ; path=/";
+  } else {
+    if (s > parseInt(A)) {
+      document.cookie = "werte=" + s + "," + B + "," + C + " ;domain=tetramethylmethan.github.io ; path=/";
+    }
   }
 }
 
-function getHighscore(){
+function getHighscore() {
   let cookie = document.cookie;
   var values = cookie.slice(6);
   var cleanValues = values.split(',')
@@ -72,24 +72,24 @@ function getHighscore(){
 
   //"werte=0,0,0 ; domain=tetramethylmethan.github.io ; path=."
 
-  if(typeof parseInt(A) != "number" ){
-      A = 0;
-  }
-  if(typeof parseInt(B) != "number"){
-      B  = 0;
-  }
-  if(typeof parseInt(C) != "number"){
-      C  = 0;
-  }
-  return {A,B,C}
+  if (typeof parseInt(A) != "number" || A == undefined || A =='') {
+    A = 0;
+}
+if (typeof parseInt(B) != "number" || B == undefined || B =='') {
+    B = 0;
+}
+if (typeof parseInt(C) != "number" || C == undefined || C =='') {
+    C = 0;
+}
+  return { A, B, C }
 
 }
 
 function draw() {
   clear()
-  background(0, 0, 0,0);
+  background(0, 0, 0, 0);
   //image(backgroundImg, 0, 0, 400, 600);
-  if(gameStarted == true) {
+  if (gameStarted == true) {
     //Set up and draw the game
     drawPlatforms();
     drawDoodler();
@@ -100,14 +100,14 @@ function draw() {
     setNextPlatform();
     showScore();
     drawLives();
-    if(health <=0){
+    if (health <= 0) {
       gameStarted = false;
       platformList = []
     }
-    
+
   } else {
     // Start menu
-    
+
     fill(0);
     textSize(60);
     text("Start", 140, 275);
@@ -117,18 +117,18 @@ function draw() {
     textSize(20);
     text("High Score: " + getHighscore()['A'], 150, 360);
     console.log(health)
-    if(health <= 0){
+    if (health <= 0) {
       textSize(25);
-      text(lastWord +" heist auf englisch:",50, 405);
+      text(lastWord + " heist auf englisch:", 50, 405);
       textSize(30);
-      text(vocabulary[lastWord],150, 440);
-      
+      text(vocabulary[lastWord], 150, 440);
+
     }
   }
 }
 
 function moveScreen() {
-  if(doodlerY < 250) {
+  if (doodlerY < 250) {
     platYChange = 3;
     doodlerVelocity += 0.25;
   } else {
@@ -138,7 +138,7 @@ function moveScreen() {
 
 // Start Game
 function mousePressed() {
-  if(gameStarted == false) {
+  if (gameStarted == false) {
     health = 3;
     score = 0;
     setupPlatforms();
@@ -152,9 +152,9 @@ function mousePressed() {
 // ===========================
 //  Lives
 // ===========================
-function drawLives(){
-  for(var i = 0; i<=health;i++){
-    image(bananaImg,400-i*40,0, 40,40)
+function drawLives() {
+  for (var i = 0; i <= health; i++) {
+    image(bananaImg, 400 - i * 40, 0, 40, 40)
   }
 }
 
@@ -186,11 +186,11 @@ function moveDoodler() {
 //  Platforms
 // ===========================
 function setupPlatforms() {
-  for(var i=0; i < numOfPlatforms; i++) {
+  for (var i = 0; i < numOfPlatforms; i++) {
     var platGap = height / numOfPlatforms;
     var newPlatformYPosition = i * platGap;
-    var plat = new Platform(newPlatformYPosition,getWord());
-    platformList.push(plat); 
+    var plat = new Platform(newPlatformYPosition, getWord());
+    platformList.push(plat);
   }
   //setup startingplatform
   plat.jumpable = true;
@@ -203,32 +203,32 @@ function setupPlatforms() {
 
 function drawPlatforms() {
   fill(106, 186, 40);
-  platformList.forEach(function(plat) {
+  platformList.forEach(function (plat) {
     // move all platforms down
     plat.yPos += platYChange;
     image(platformImg, plat.xPos, plat.yPos, plat.width, plat.height);
 
-    if(plat.color == 1){
+    if (plat.color == 1) {
       fill(50, 205, 50);
     }
-    if(plat.color == 0){
-      fill(176,176,176);
+    if (plat.color == 0) {
+      fill(176, 176, 176);
     }
-    if(plat.color == 2){
-      fill(236, 236,236 );
+    if (plat.color == 2) {
+      fill(236, 236, 236);
     }
 
-    if(nextPlatform === plat){
-      fill(255, 255,0);
+    if (nextPlatform === plat) {
+      fill(255, 255, 0);
     }
 
     textSize(30);
     text(plat.word, plat.xPos, plat.yPos);
 
-    if(plat.yPos > 600) {
-      
+    if (plat.yPos > 600) {
+
       platformList.pop();
-      var newPlat = new Platform(0,getWord());
+      var newPlat = new Platform(0, getWord());
       platformList.unshift(newPlat); // add to front
 
     }
@@ -247,26 +247,26 @@ function Platform(newPlatformYPosition, word) {
 // ===========================
 //  Words
 // ===========================
-function getWord(){
+function getWord() {
   var keys = Object.keys(vocabulary);
   return keys[Math.floor(Math.random() * keys.length)];
 }
 
-function keyPressed(){
-  if(keyCode == BACKSPACE){
+function keyPressed() {
+  if (keyCode == BACKSPACE) {
     guess = guess.slice(0, -1);
   }
 
 }
-function keyTyped(){
+function keyTyped() {
   // controll
-  if(keyCode == ENTER){
+  if (keyCode == ENTER) {
     console.log(guess)
     console.log(vocabulary[nextPlatform.word])
-    guess = guess.replace(' ','')
-    if(guess != ""){
+    guess = guess.replace(' ', '')
+    if (guess != "") {
       lastWord = nextPlatform.word;
-      if (guess == vocabulary[nextPlatform.word].replace(' ','')){
+      if (guess == vocabulary[nextPlatform.word].replace(' ', '')) {
         //richtige eingabe
         score++;
         nextPlatform.jumpable = true;
@@ -274,7 +274,7 @@ function keyTyped(){
         nextPlatform.color = 1;
         setNextPlatform();
         guess = "";
-      }else{
+      } else {
         //falsche eingabe
         health--;
         nextPlatform.jumpable = true;
@@ -285,29 +285,29 @@ function keyTyped(){
       }
     }
 
-    return; 
+    return;
   }
-  guess = guess+ key;
+  guess = guess + key;
 }
-function drwaGuess(){
+function drwaGuess() {
   fill(255, 255, 255);
   textSize(60);
   text(guess, 150, 325);
 }
-function setNextPlatform(){
+function setNextPlatform() {
 
-  platformList.forEach(function(plat){
-    if(!plat.jumpable){
+  platformList.forEach(function (plat) {
+    if (!plat.jumpable) {
       nextPlatform = plat
       return
     }
   })
 }
 
-function showScore(){
-  fill(240,255,255)
+function showScore() {
+  fill(240, 255, 255)
   textSize(30);
-  text("Score: " + score, 0,30);
+  text("Score: " + score, 0, 30);
 }
 
 
@@ -315,9 +315,9 @@ function showScore(){
 //  Collisions
 // ===========================
 function checkCollision() {
-  platformList.forEach(function(plat) {
-    if(plat.jumpable){ 
-      if(
+  platformList.forEach(function (plat) {
+    if (plat.jumpable) {
+      if (
         doodlerX < plat.xPos + plat.width &&
         doodlerX + doodlerSize > plat.xPos &&
         doodlerY + doodlerSize < plat.yPos + plat.height &&
@@ -326,21 +326,22 @@ function checkCollision() {
       ) {
         doodlerVelocity = -10;
       }
-  }});
-  
-  if(doodlerY > height) {
-    if(score > highScore) {
+    }
+  });
+
+  if (doodlerY > height) {
+    if (score > highScore) {
       highScore = score;
     }
     health = 0;
     gameStarted = false;
     platformList = [];
   }
-  
+
   // screen wraps from left to right
-  if(doodlerX < -doodlerSize) {
+  if (doodlerX < -doodlerSize) {
     doodlerX = width;
-  } else if(doodlerX > width) {
+  } else if (doodlerX > width) {
     doodlerX = -doodlerSize;
   }
 }

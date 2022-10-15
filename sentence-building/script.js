@@ -33,13 +33,13 @@ function getHighscore() {
 
     //"werte=0,0,0 ; domain=tetramethylmethan.github.io ; path=."
 
-    if (typeof parseInt(A) != "number") {
+    if (typeof parseInt(A) != "number" || A == undefined || A =='') {
         A = 0;
     }
-    if (typeof parseInt(B) != "number") {
+    if (typeof parseInt(B) != "number" || B == undefined || B =='') {
         B = 0;
     }
-    if (typeof parseInt(C) != "number") {
+    if (typeof parseInt(C) != "number" || C == undefined || C =='') {
         C = 0;
     }
     return { A, B, C }
@@ -56,7 +56,7 @@ function start() {
 function fillWords() {
     k = 1;
     for (i; i <= i + 9; i++) {
-        document.getElementById(k).innerText = words[i];
+        document.getElementById("button" + k).innerText = words[i];
         k++;
     }
 }
@@ -71,13 +71,13 @@ function checkSentence() {
     if (a == sentencesEn[enSenNr]) {
         enSenNr++;
         clearResult();
-        document.getElementById("right").innerHTML = "Richtig!";
+        document.getElementById("correct").innerHTML = "Correct!";
         clearAnswer();
         score++;
         document.getElementById('count').innerHTML = score;
     } else {
         clearResult();
-        document.getElementById("false").innerHTML = "Falsch! Richtig wäre: " + sentencesEn[enSenNr];
+        document.getElementById("false").innerHTML = "Wrong! Correct would be: " + sentencesEn[enSenNr];
         enSenNr++;
         clearAnswer();
         loverHealth();
@@ -86,7 +86,7 @@ function checkSentence() {
 }
 
 function clearResult() {
-    document.getElementById("right").innerHTML = "";
+    document.getElementById("correct").innerHTML = "";
     document.getElementById("false").innerHTML = "";
 }
 
@@ -106,6 +106,7 @@ function next() {
             setSentence();
             fillWords();
         } else {
+            checkSentence();
             history.back();
         }
     }

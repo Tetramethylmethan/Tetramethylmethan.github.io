@@ -1,6 +1,7 @@
-*{
+* {
   font-family: arial;
 }
+
 body {
   /* background-image: url("./img/jungle.jpg"); */
   background-color: black;
@@ -228,16 +229,16 @@ body {
 */
 
 #deadMenu {
-  position: relative;
-  margin-top: -45rem;
-  margin-right: auto;
-  margin-left: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 50rem;
   height: 40rem;
   background-color: rgb(186, 174, 174);
   box-shadow: 0px 5px 10px rgb(0, 0, 0);
   border: 2px solid;
   border-radius: 25px;
+  transform: translate(-50%, -50%);
 }
 
 #lost {

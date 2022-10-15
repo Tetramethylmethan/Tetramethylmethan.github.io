@@ -11,18 +11,24 @@ body {
     background-repeat: no-repeat;
 }
 
+/* 
+
+    BUTTONS
+
+*/
+
 .button {
-    position: relative;
-    width: 150px;
-    height: 50px;
-    top: 200px;
-    left: 250px;
-    border-radius: 15px;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 60px;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 25px;
     color: rgb(255, 255, 255);
     background: rgb(57, 57, 57);
-    font-size: 20px;
+    box-shadow: 0px 5px 10px rgb(0, 0, 0);
+    border: 2px solid;
     cursor: pointer;
-    box-shadow: 0px 17px 10px -7px rgba(0, 0, 0, 4);
 }
 
 .button:hover {
@@ -32,14 +38,61 @@ body {
     background-color: #47520b;
 }
 
-/* 
+#button1 {
+    position: absolute;
+    top: 25%;
+    left: 18%;
+}
 
-    NEXT AND EXIT BUTTONS
+#button2 {
+    position: absolute;
+    top: 25%;
+    left: 26%;
+}
 
-*/
+#button3 {
+    position: absolute;
+    top: 25%;
+    left: 34%;
+}
+
+#button4 {
+    position: absolute;
+    top: 25%;
+    left: 42%;
+}
+
+#button5 {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+}
+
+#button6 {
+    position: absolute;
+    top: 25%;
+    left: 58%;
+}
+
+#button7 {
+    position: absolute;
+    top: 25%;
+    left: 66%;
+}
+
+#button8 {
+    position: absolute;
+    top: 25%;
+    left: 74%;
+}
+
+#button9 {
+    position: absolute;
+    top: 25%;
+    left: 82%;
+}
 
 #next {
-    margin: 0;
     position: absolute;
     top: 90%;
     left: 90%;
@@ -65,11 +118,9 @@ body {
 }
 
 #exit {
-    margin: 0;
     position: absolute;
     top: 90%;
     left: 10%;
-    margin-right: -50%;
     transform: translate(-50%, -50%);
     width: 120px;
     height: 70px;
@@ -90,16 +141,14 @@ body {
     background-color: #47520b;
 }
 
-#check {
-    margin: 0;
+#deleteWords {
     position: absolute;
-    top: 90%;
-    left: 80%;
-    margin-right: -50%;
+    top: 50%;
+    left: 73%;
     transform: translate(-50%, -50%);
-    width: 120px;
-    height: 70px;
-    font-size: 35px;
+    width: 140px;
+    height: 60px;
+    font-size: 25px;
     font-weight: bold;
     border-radius: 25px;
     color: rgb(255, 255, 255);
@@ -109,17 +158,23 @@ body {
     cursor: pointer;
 }
 
-#check:hover {
+#deleteWords:hover {
     border: 2px solid;
     border-color: rgb(98, 255, 0);
     color: white;
     background-color: #47520b;
 }
 
+/*
+
+
+*/
+
 #ape {
     position: absolute;
-    top: 550px;
-    left: 650px;
+    top: 70%;
+    left: 40%;
+    transform: translate(-50%, -50%);
 }
 
 .bubble {
@@ -129,10 +184,12 @@ body {
     color: rgb(255, 255, 255);
     background: rgb(57, 57, 57);
     border-radius: 50px;
-    top: 550px;
-    left: 850px;
+    top: 63%;
+    left: 58%;
     box-shadow: 0px 17px 10px -7px rgba(0, 0, 0, 4);
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
 }
 
 .bubble:after {
@@ -162,28 +219,31 @@ body {
     width: 700px;
     position: absolute;
     font-size: 30px;
-    top: 380px;
-    left: 600px;
+    top: 50%;
+    left: 50%;
     text-align: center;
     border-radius: 50px;
     box-shadow: 0px 17px 10px -7px rgba(0, 0, 0, 4);
     color: rgb(255, 255, 255);
     background: rgb(57, 57, 57);
+    transform: translate(-50%, -50%);
 }
 
 #false {
-    position: relative;
+    position: absolute;
     text-align: center;
     font-size: 50px;
-    top: 180px;
+    top: 29%;
+    left: 25%;
     color: rgb(245, 11, 11);
 }
 
-#right {
-    position: relative;
+#correct {
+    position: absolute;
     text-align: center;
     font-size: 50px;
-    top: 180px;
+    top: 29%;
+    left: 45%;
     color: rgb(7, 70, 15);
 }
 
@@ -220,15 +280,16 @@ body {
 */
 
 #deadMenu {
-    position: relative;
-    margin-right: auto;
-    margin-left: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 50rem;
     height: 40rem;
     background-color: rgb(186, 174, 174);
     box-shadow: 0px 5px 10px rgb(0, 0, 0);
     border: 2px solid;
     border-radius: 25px;
+    transform: translate(-50%, -50%);
 }
 
 #lost {

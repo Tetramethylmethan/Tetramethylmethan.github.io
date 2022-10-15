@@ -49,14 +49,14 @@ function setHighscore(s){
   
     //"werte=0,0,0 ; domain=tetramethylmethan.github.io ; path=."
   
-    if(typeof parseInt(A) != "number" ){
+    if (typeof parseInt(A) != "number" || A == undefined || A =='') {
         A = 0;
     }
-    if(typeof parseInt(B) != "number"){
-        B  = 0;
+    if (typeof parseInt(B) != "number" || B == undefined || B =='') {
+        B = 0;
     }
-    if(typeof parseInt(C) != "number"){
-        C  = 0;
+    if (typeof parseInt(C) != "number" || C == undefined || C =='') {
+        C = 0;
     }
     return {A,B,C}
   
@@ -101,7 +101,7 @@ function start(){
         setHighscore(score)
     }
     word = data[i];
-    
+
     var anfang = "<a style='color:black;'>" + word[0] + "</a>";
     var restWort = word.slice(1);
     var wordUnchanged = anfang + restWort;
